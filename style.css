@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  font-weight: 500;
+  color: #99cba6;
+}
+
+body {
+  background-color: #000000;
+  grid-template: 75px 1fr 75px / 150px 640px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+  color: aliceblue;
+}
+
+.header p {
+  font-size: 36px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 15%;
+}
+
+.sidebar {
+  background-color: #282828;
+  color: aliceblue;
+  display: grid;
+  text-align: center;
+  padding: 25px;
+  border-radius: 2px;
+}
+
+.sidebar p {
+  padding-top: 15px;
+}
+
+#draw-color-card {
+  padding-top: 20px;
+}
+
+input[type=color] {
+  appearance: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #99cba6;
+  border-radius: 2px;
+  height: 3em;
+  width: 4em;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch {
+  border: none;
+}
+
+button {
+  background-color: #282828;
+  border: 1px solid #99cba6;
+  border-radius: 2px;
+  padding: 0 2em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+button:hover, .active {
+  background-color: #99cba6;
+  color: #282828;
+  font-weight: 600;
+}
+
+.range-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 18px;
+}
+
+input[type="range"] {
+  appearance: none;
+  background: transparent;
+  cursor: grab;
+  width: 10.5em;
+}
+
+input[type="range"]:active {
+  cursor: grabbing;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  margin-top: -4px;
+  border-radius: 2px;
+  background-color: #99cba6;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #f0f8ff;
+  border-radius: 2px;
+  height: 0.3rem;
+}
+
+.grid-container {
+  display: grid;
+  height: 665px;
+  width: 665px;
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  border: 25px solid #282828;
+  border-radius: 2px; 
+}
+
+.grid-item {
+  background-color: #f0f8ff;
+}
+
+.grid-item:hover {
+  cursor:crosshair;
+}
+
+.outline {
+  outline: 1px solid #787878;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 1em;
+  height: 75px;
+  color: #f0f8ff;
+}

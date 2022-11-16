@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Web Sketchpad</title>
+</head>
+
+<body>
+  <div class="header">
+    <p>Web Sketchpad</p>
+  </div>
+
+  <div class="flex-container">
+
+    <div class="sidebar">
+      <div id="draw-color-card">
+        <input type="color" id="draw-color" />
+        <p>Draw Color</p>
+      </div>
+      <div id="bg-color-card">
+        <input type="color" id="bg-color" value="#f0f8ff" />
+        <p>Background Color</p>
+      </div>
+
+      <button id="rainbow-mode">Rainbow Mode</button>
+      <button id="toggle-eraser">Eraser</button>
+      <button id="clear-button">Clear</button>
+      <button id="toggle-grid" class="active">Toggle Grid Lines</button>
+
+      <div class="range-input">
+        <input type="range" id="grid-range" value="16" min="1" max="32" />
+      </div>
+      <span id="grid-size">Grid size: 16 x 16</span>
+    </div>
+
+    <div class="grid-container"></div>
+
+  </div>
+  <div class="footer">
+    <span>&copy; 2022 - RH Productions</span>
+  </div>
+
+</body>
+
+
+<script src="script.js"></script>
+</html>
