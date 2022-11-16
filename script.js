@@ -103,7 +103,7 @@ for (item of gridItems) {
   });
 }
 
-// Allow user to paint blocks when click in them
+// Allow user to paint blocks when click on them
 for (item of gridItems) {
   item.addEventListener('click', (e) => {
     paintBlocks(e);
