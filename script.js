@@ -74,13 +74,13 @@ eraserButton.addEventListener('click', () => {
 
 // Make the Clear button paint all the blocks with the same color as the background
 clearButton.addEventListener('click', () => {
-  clear()
+  clear();
 });
 
 function clear() {
   for (let i = 0; i < gridItems.length; i++) {
     if (gridItems[i].classList.contains('painted'))
-    gridItems[i].style.background = currentBgColor;
+      gridItems[i].style.background = currentBgColor;
     gridItems[i].classList.remove('painted');
   }
 }
