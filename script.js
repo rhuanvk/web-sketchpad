@@ -23,8 +23,9 @@ gridRange.addEventListener('mousemove', (e) => {
   currentSize = e.target.value;
   gridContainer.style.gridTemplateColumns = `repeat(${currentSize}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${currentSize}, 1fr)`;
-
   gridSize.innerText = `Grid size: ${currentSize} x ${currentSize}`;
+  if (!mouseDown) return;
+  clear();
 });
 
 // Create divs to use as grid items according to currentSize
@@ -73,11 +74,16 @@ eraserButton.addEventListener('click', () => {
 
 // Make the Clear button paint all the blocks with the same color as the background
 clearButton.addEventListener('click', () => {
+  clear()
+});
+
+function clear() {
   for (let i = 0; i < gridItems.length; i++) {
+    if (gridItems[i].classList.contains('painted'))
     gridItems[i].style.background = currentBgColor;
     gridItems[i].classList.remove('painted');
   }
-});
+}
 
 // Make the Toggle Grid Lines button remove the outlines from grid items
 toggleGridButton.addEventListener('click', () => {
@@ -103,7 +109,7 @@ for (item of gridItems) {
   });
 }
 
-// Allow user to paint blocks when click in them
+// Allow user to paint blocks when click on them
 for (item of gridItems) {
   item.addEventListener('click', (e) => {
     paintBlocks(e);
@@ -112,7 +118,7 @@ for (item of gridItems) {
 
 // Paint the grid blocks according to the currentInkType
 function paintBlocks(e) {
-  if (currentInkType == 'default') {
+  if (currentInkType == 'default' && !eraserButton.classList.contains('active')) {
     e.target.style.background = currentColor;
     e.target.classList.toggle('painted');
   }
